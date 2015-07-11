@@ -1,0 +1,3 @@
+ofxBpm
+ofxControlUtils
+ofxGenSound
