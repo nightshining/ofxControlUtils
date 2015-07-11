@@ -63,7 +63,7 @@ void ofApp::draw(){
     ofDrawBitmapString("Trigger On Equal: " + stateCheckTriggerPrint, w * .10, h * .30);
     
     //// ofxControlUtils::rampUp ////
-    string rampUpDebug = ofToString(ofMap(control.rampToggle(ofGetMousePressed(), 1.0, .10), 0.0, 1.0, 0, 255));
+    string rampUpDebug = ofToString(ofMap(control.rampToggle(ofGetMousePressed(), 0.50, 0.05), 0.0, 1.0, 0, 255));
     ofDrawBitmapString("Ramp Toggle: " + rampUpDebug, w * .10, h * .35);
 
 }
