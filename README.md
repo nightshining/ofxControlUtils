@@ -17,7 +17,7 @@ bool triggerOnEqual(int input, int compare);
 
 - A simple logic statement that returns a very brief 'true' value then resets to 'false' until comparision is equal again.
  
- bool stateCheck(float input, float thresh);
+# bool stateCheck(float input, float thresh);
 
 - If the 'input' is greater than 'thresh' this function returns a very brief 'true'.
 
