@@ -40,7 +40,8 @@ void ofApp::draw(){
     //// ofxControlUtils::counter ////
     
     ofDrawBitmapString("Counter: " + ofToString(control.counter(ticker, 3)), w * .10, h * .15);
-    //// ofxControlUtils::counter ////
+    
+    //// ofxControlUtils::timer ////
 
     ofDrawBitmapString("Timer: " + ofToString(control.timer(1000)), w * .10, h * .20);
     
@@ -51,11 +52,12 @@ void ofApp::draw(){
     bool stateCheckThresh = control.stateCheck(ofGetMouseX(), ofGetWidth() / 2);
     string stateCheckThreshPrint;
     stateCheckThresh ? stateCheckThreshPrint = "True" : stateCheckThreshPrint = "False";
-
-    //ofDrawBitmapString("State Check: " + stateCheckThreshPrint, w * .10, h * .25);
+    
     ofDrawBitmapString("State Check: " + ofToString(stateCheckThresh), w * .10, h * .25);
 
     //// ofxControlUtils::triggerOnEqual ////
+    
+    //Press any 'key' to trigger bool
     
     bool stateCheckTrigger = control.triggerOnEqual(ofGetKeyPressed(), 0);
     string stateCheckTriggerPrint;
@@ -63,6 +65,9 @@ void ofApp::draw(){
     ofDrawBitmapString("Trigger On Equal: " + stateCheckTriggerPrint, w * .10, h * .30);
     
     //// ofxControlUtils::rampUp ////
+    
+    //Click press and release ramp up and down at two different speeds
+    
     string rampUpDebug = ofToString(ofMap(control.rampToggle(ofGetMousePressed(), 0.50, 0.05), 0.0, 1.0, 0, 255));
     ofDrawBitmapString("Ramp Toggle: " + rampUpDebug, w * .10, h * .35);
 
