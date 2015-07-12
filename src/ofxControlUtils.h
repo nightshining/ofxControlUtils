@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include "ofMain.h"
@@ -35,5 +36,7 @@ private:
     float rampUpStart, rampDownStart;
     //Note: add rampPendulum?
     
-    
+    //Written by M. Romeo 2015
+    //openFrameworks v8.4
+    //https://github.com/nightshining/ofxControlUtils
 };

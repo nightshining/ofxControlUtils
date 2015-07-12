@@ -1,3 +1,0 @@
-ofxBpm
-ofxControlUtils
-ofxGenSound
