@@ -33,7 +33,8 @@ private:
     int count;
     int startTime, endTime;
     bool checkStateThresh, checkStateRange, checkStateTrigger; // Might need mutltiple bools for this
-    float rampUpStart, rampDownStart;
+    //float rampUpStart, rampDownStart;
+    float ramp;
     //Note: add rampPendulum?
     
     //Written by M. Romeo 2015

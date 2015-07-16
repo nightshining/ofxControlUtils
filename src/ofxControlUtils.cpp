@@ -19,6 +19,8 @@ ofxControlUtils::ofxControlUtils(){
     checkStateRange = false;
     checkStateTrigger = false;
     
+    ramp = 0.0;
+    
     
 }
 
@@ -200,29 +202,22 @@ bool ofxControlUtils::triggerOnEqual(int input, int compare) {
 }
 
 float ofxControlUtils::rampToggle(bool toggle, float speedUp, float speedDown){
-
-    float smooth = 10; //Note : Added this in so speed can be set between 0.0 - 1.0
-    // 1.0 fast
-    // 0.5 moderate
-    // 0.25 slow
     
-    if(toggle)
-    {
-        rampUpStart += speedUp / smooth;
-    
+    if (toggle) {
+        
+        ramp = ofLerp(ramp, 1.0, speedUp);
+            
     } else {
         
-        rampUpStart -= speedDown / smooth;
+        ramp = ofLerp(ramp, 0.0, speedDown);
+        
     }
     
-    if (rampUpStart >= 1.0) {
-        rampUpStart = 1.0;
+    if (ramp <= 0.01) {
+        ramp = 0.0;
     }
     
-    if (rampUpStart <= 0.0) {
-        rampUpStart = 0.0;
-    }
-        return rampUpStart;
+    return ramp;
 }
 
 float ofxControlUtils::smoothData(vector<float> inputData, const int smoothAmt) {
