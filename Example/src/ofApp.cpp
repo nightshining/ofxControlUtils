@@ -49,7 +49,7 @@ void ofApp::draw(){
     
     //Move your Mouse passed the half way point of the window to trigger a 'true'
     
-    bool stateCheckThresh = control.stateCheck(ofGetMouseX(), ofGetWidth() / 2);
+    bool stateCheckThresh = control.stateCheck(ofGetMouseX(), ofGetWidth() * .5);
     string stateCheckThreshPrint;
     stateCheckThresh ? stateCheckThreshPrint = "True" : stateCheckThreshPrint = "False";
     

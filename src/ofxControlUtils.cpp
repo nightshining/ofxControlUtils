@@ -132,11 +132,11 @@ bool ofxControlUtils::stateCheck(float input, float minThresh, float maxThresh){
     // Check if some 'int input' is between min and max value
     // if it is return a '1'
     
-    bool toggle;
+    bool toggle = false;
     
     if (checkStateRange == false) { //&& ofGetSystemTime() <= 1
         
-        if (input > minThresh && input <= maxThresh ) {
+        if (input < minThresh || input > maxThresh) {
             
             //cout << "on" << endl;
             
@@ -147,9 +147,10 @@ bool ofxControlUtils::stateCheck(float input, float minThresh, float maxThresh){
         
     }
     
+    
     if (checkStateRange == true ) { //&& ofGetSystemTime() <= 1
         
-        if (input < minThresh || input > maxThresh) {
+        if (input > minThresh && input <= maxThresh ) {
             
             //cout << "off" << endl;
             
