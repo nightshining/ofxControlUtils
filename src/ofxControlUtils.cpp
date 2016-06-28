@@ -214,7 +214,7 @@ float ofxControlUtils::rampToggle(bool toggle, float speedUp, float speedDown){
         
     }
     
-    if (ramp <= 0.01) {
+    if (ramp <= 0.0001) {
         ramp = 0.0;
     }
     
